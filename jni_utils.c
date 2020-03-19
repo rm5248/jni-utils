@@ -133,7 +133,7 @@ void jniutil_jul_log( JNIEnv* env, const char* class_name, const char* logger_na
 
 	va_end( myargs );
 
-	jniutil_jul_log( env, class_name, logger_name, level, buffer );
+	jniutil_jul_log_simple( env, class_name, logger_name, level, buffer );
 }
 
 void jniutil_slf4j_log_simple( JNIEnv* env, const char* class_name, const char* logger_name, enum SLF4J_LogLevel level, const char* message ){
@@ -210,7 +210,7 @@ void jniutil_slf4j_log( JNIEnv* env, const char* class_name, const char* logger_
 
 	va_end( myargs );
 
-	jniutil_slf4j_log( env, class_name, logger_name, level, buffer );
+	jniutil_slf4j_log_simple( env, class_name, logger_name, level, buffer );
 }
 
 int jniutil_get_integer_field( JNIEnv* env, jobject obj, const char* field_name, jint* value ){
